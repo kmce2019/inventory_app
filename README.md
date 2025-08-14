@@ -19,8 +19,8 @@ This is a graphical user interface (GUI) application for Windows designed to con
 
 1.  **Clone the repository:**
     ```bash
-    git clone <your-repository-url>
-    cd <your-repository-name>
+    git clone [<your-repository-url>](https://github.com/kmce2019/inventory_app)
+    cd inventory_app
     ```
 
 2.  **Create a virtual environment (recommended):**
