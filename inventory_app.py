@@ -27,40 +27,63 @@ ASSET_FIELD_MAPPING = {
     'Cell_Phone_Number':  ['Cell Phone Number', 'Mobile Number']
 }
 
-# 4. Define users to EXCLUDE from the Inactive User report.
-EXCLUDE_EXACT_USERS = [
-    '101 pager', '101 ticketoffice', '102 loud ringer', '102 pager', '102 ticket office', '103 laporte ringer ata', '103 ticketoffice', 
-    '104 loud ringer', '104 open user 1', '104 open user 2', '104 pager', '104 ticket room', '105 conferenceroom', '105 mainoffice', 
-    '105 ticketroom', '106 driver\'s room', '106 foodgrade ticket office', '106 main office', '107-depot', '108 corrigo ticket room', '108 loudringer', 
-    '108 pager', '108 ticket', '110 columbus ringer ata', '110 fg', '111 cincinnatiloudspeaker', '112 louisville ringer ata', 
-    '112 ticket office', '113 loud ringer', '113 pager', '113 ticketroom', '114 pager', '117 sarnia user', '118 open user', '119 break room', 
-    '119 loudringer', '119 pager', '119 ticketroom', '130 loud ringer', '130 pager', '131 main office', '131 loud ringer', '131 pager', '131 ticket', 
-    '146 main', '147 main', '149 user1', '150 user3', '156 frontdesk', '165 user1', '165 wash bay 1', '190 main office', '195 line 1', 
-    '203 ticket', '204 ticket office', '215 user 2', '220 dallas open user', '222 servicedesk', '222 ticketoffice', '223 csc', '223 ticket', 
-    '223 ticket 2', '233 tankwash', '246 - second office', '246 - ticket office', '249 linda dunbar', '249 loudringer', '249 open user', '249 pager', 
-    '254-foodgrade', '254 pager', '255 loud ringer', '255 pager', '256 loud ringer', '256 pager', '256 user', '267 loud ringer', '267 pager', 
-    '267 ticketoffice', '269 ticket office', '275 houston open user 1', '275 loudringer', '275 pager', '276 ticket office', '279 loud pager', 
-    '279 loud ringer', '282 ticket office', '290 ticketoffice', '292 ticket', '401.basfibc', '401-label', '401cmisauto', '401cmisship', '401 guests', 
-    '401 page', '403-label', '403 conference room', '405 front office', '405 inventory', '4825670fffa4', '4825671bab3e', '482567bae484', 
-    '482567bb3a56', '482567bb3fa4', '482567bb91a9', '482567bc014e', '503 manager', '506 paging', '508 sales office', '512 conference', 
-    '512 conference 2', '512 paging', '514 conference', '520 paging', '521 paging', '526 paging', '526 upstairs', '527-conference-exec', 
-    '527-conference-main', '527-washbay-1', '527-washbay-2', '527 paging', '527 upstairs', '528 paging', '528 tankcon', '529 paging', '530 biller', 
-    '532 paging', '532 petroleum', '534 front office', '535 paging', '536 paging', '537 front office', '537 paging', '537 reception', 
-    '537 service', '537 spare', '538 conference', '538 paging', '539 conference', '539 front office', '540 paging', '541 paging', 
-    '541 service manager', '541 tank wash', '543 paging', '544 paging', '544 service writer', '547 paging', '550 paging', '555 paging', 
-    '559 paging', '561 dan', '561 paging', '565 pager', '566 paging', '567 breakroom', '572 conference', '572 paging', '573 office', 
-    '573 operator', '573 paging', '574 paging', '574 service', '586 conference', '586 paging', '586 sales office', '587 break room', 
-    '587 paging', '589 paging', '596 office', '599 paging', '6161 algo', '665 user 1', '665 user 2', '701 tank wash', '701 truck drivers', 
-    '702 labarea', '704 box gate', '704 conference main', '704 conference ops', '704 connex', '704 entrance gate', 'admin', 'administrator', 'ballast', 
-    'camera', 'cameras', 'dieseltech', 'drive kiosk', 'euautomatedreports', 'frontlinescan', 'houston275', 'labelmaker', 'laporteticket', 
-    'mailattachment', 'nablesa', 'nlr506', 'pdeangelis', 'plcuser', 'qhl-gibraltar', 'qrsreports', 'qualatv', 'sacramento534', 'stackcom', 
-    'store248', 'supervisor', 'surface', 'tablet', 'tank251', 'toolbox', 'user', 'userx', 'wash computer 2'
-]
-
+# 4. **UPDATED**: Define keywords and names to EXCLUDE from the Inactive User report.
+#    If a username contains any of these (case-insensitive), it will be excluded.
 EXCLUDE_KEYWORD_USERS = [
-    'admin', 'shop', 'part', 'timeclock', 'time', 'tc', 'backparts', 
-    'training', 'tickets', 'counter', 'diag', 'warehouse', 'joliet', 
-    'karmak', 'kiosk', 'shipping', 'boasso'
+    '101 pager', '101 ticketoffice', '102 loud ringer', '102 pager', 
+    '102 ticket office', '103 laporte ringer ata', '103 ticketoffice', 
+    '104 loud ringer', '104 open user 1', '104 open user 2', '104 pager', 
+    '104 ticket room', '105 conferenceroom', '105 mainoffice', 
+    '105 ticketroom', '106 driver\'s room', '106 foodgrade ticket office', 
+    '106 main office', '107-depot', '108 corrigo ticket room', '108 loudringer', 
+    '108 pager', '108 ticket', '110 columbus ringer ata', '110 fg', 
+    '111 cincinnatiloudspeaker', '112 louisville ringer ata', 
+    '112 ticket office', '113 loud ringer', '113 pager', '113 ticketroom', 
+    '114 pager', '117 sarnia user', '118 open user', '119 break room', 
+    '119 loudringer', '119 pager', '119 ticketroom', '130 loud ringer', 
+    '130 pager', '131 main office', '131 loud ringer', '131 pager', '131 ticket', 
+    '146 main', '147 main', '149 user1', '150 user3', '156 frontdesk', 
+    '165 user1', '165 wash bay 1', '190 main office', '195 line 1', 
+    '203 ticket', '204 ticket office', '215 user 2', '220 dallas open user', 
+    '222 servicedesk', '222 ticketoffice', '223 csc', '223 ticket', 
+    '223 ticket 2', '233 tankwash', '246 - second office', '246 - ticket office', 
+    '249 linda dunbar', '249 loudringer', '249 open user', '249 pager', 
+    '254-foodgrade', '254 pager', '255 loud ringer', '255 pager', 
+    '256 loud ringer', '256 pager', '256 user', '267 loud ringer', '267 pager', 
+    '267 ticketoffice', '269 ticket office', '275 houston open user 1', 
+    '275 loudringer', '275 pager', '276 ticket office', '279 loud pager', 
+    '279 loud ringer', '282 ticket office', '290 ticketoffice', '292 ticket', 
+    '401.basfibc', '401-label', '401cmisauto', '401cmisship', '401 guests', 
+    '401 page', '403-label', '403 conference room', '405 front office', 
+    '405 inventory', '4825670fffa4', '4825671bab3e', '482567bae484', 
+    '482567bb3a56', '482567bb3fa4', '482567bb91a9', '482567bc014e', 
+    '503 manager', '506 paging', '508 sales office', '512 conference', 
+    '512 conference 2', '512 paging', '514 conference', '520 paging', 
+    '521 paging', '526 paging', '526 upstairs', '527-conference-exec', 
+    '527-conference-main', '527-washbay-1', '527-washbay-2', '527 paging', 
+    '527 upstairs', '528 paging', '528 tankcon', '529 paging', '530 biller', 
+    '532 paging', '532 petroleum', '534 front office', '535 paging', 
+    '536 paging', '537 front office', '537 paging', '537 reception', 
+    '537 service', '537 spare', '538 conference', '538 paging', 
+    '539 conference', '539 front office', '540 paging', '541 paging', 
+    '541 service manager', '541 tank wash', '543 paging', '544 paging', 
+    '544 service writer', '547 paging', '550 paging', '555 paging', 
+    '559 paging', '561 dan', '561 paging', '565 pager', '566 paging', 
+    '567 breakroom', '572 conference', '572 paging', '573 office', 
+    '573 operator', '573 paging', '574 paging', '574 service', 
+    '586 conference', '586 paging', '586 sales office', '587 break room', 
+    '587 paging', '589 paging', '596 office', '599 paging', '6161 algo', 
+    '665 user 1', '665 user 2', '701 tank wash', '701 truck drivers', 
+    '702 labarea', '704 box gate', '704 conference main', '704 conference ops', 
+    '704 connex', '704 entrance gate', 'admin', 'administrator', 'ballast', 
+    'boasso', 'bstiles', 'camera', 'cameras', 'counter', 'backparts', 'diag', 
+    'dieseltech', 'drive kiosk', 'euautomatedreports', 'frontlinescan', 
+    'houston275', 'joliet', 'karmak', 'kiosk', 'labelmaker', 'laporteticket', 
+    'mailattachment', 'nablesa', 'nlr506', 'part', 'pdeangelis', 'plcuser', 
+    'qhl-gibraltar', 'Quala', 'Redcar', 'qrsreports', 'qualatv', 'sacramento534', 'ship', 'shipping', 
+    'shop', 'stackcom', 'store248', 'supervisor', 'surface', 'tablet', 
+    'tank251', 'tc', 'tickets', 'time', 'timeclock', 'toolbox', 'training', 
+    'user', 'userx', 'warehouse', 'wash computer 2'
 ]
 
 # 5. Phone Usage Report Column Names
@@ -74,16 +97,15 @@ PHONE_USAGE_COLUMNS = {
 class App(customtkinter.CTk):
     def __init__(self):
         super().__init__()
-        self.title("Advanced Inventory Exporter v4.3")
+        self.title("Advanced Inventory Exporter v4.4")
         self.geometry("800x700")
 
         # --- Data Storage ---
         self.processed_df = None
         self.active_pids = None
-        self.name_to_id_map = None # To store the name mapping
+        self.name_to_id_map = None 
         
         # --- Exclusion Lists are now part of the App class ---
-        self.EXCLUDE_EXACT_USERS = EXCLUDE_EXACT_USERS
         self.EXCLUDE_KEYWORD_USERS = EXCLUDE_KEYWORD_USERS
         
         # --- Configure grid layout ---
@@ -212,7 +234,7 @@ class App(customtkinter.CTk):
         if asset_types_to_include is None:
             asset_types_to_include = ['Computer', 'Desk_Phone', 'Cell_Phone']
         cols_to_keep = [merge_key]
-        if merge_key == 'Position ID':
+        if merge_key == 'Position ID' and USER_COLUMN_IN_ASSETS in source_df.columns:
             cols_to_keep.append(USER_COLUMN_IN_ASSETS)
         user_base_df = source_df[cols_to_keep].copy().drop_duplicates(subset=[merge_key])
         final_report_df = user_base_df
@@ -244,9 +266,11 @@ class App(customtkinter.CTk):
     def generate_report_2(self):
         inactive_df = self.processed_df[self.processed_df['Position ID'].isnull()].copy()
         inactive_df = inactive_df.dropna(subset=[USER_COLUMN_IN_ASSETS])
-        inactive_df = inactive_df[~inactive_df[USER_COLUMN_IN_ASSETS].str.lower().isin(self.EXCLUDE_EXACT_USERS)]
+        
+        # Updated to use a single keyword list
         keyword_regex = '|'.join(self.EXCLUDE_KEYWORD_USERS)
         inactive_df = inactive_df[~inactive_df[USER_COLUMN_IN_ASSETS].str.lower().str.contains(keyword_regex, na=False)]
+        
         report_df = self._build_wide_report(inactive_df, merge_key=USER_COLUMN_IN_ASSETS)
         self.export_to_csv(report_df, "Inactive_User_Inventory")
 
